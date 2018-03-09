@@ -36,8 +36,8 @@ $ react-native run-ios
  * `react-native-cli: 2.0.1`
  * `react-native: 0.54.0`
  
- `react-native-hotels-app` is a `react-native` mobile application we assumed that you're familiarized with this framework, otherwise it is here where you should start [react-native-getting-started](https://facebook.github.io/react-native/docs/getting-started.html#content)
- 
+  `react-native-hotels-app` is a `react-native` mobile application is assumed that you're familiarized with this framework, otherwise it is here where you should start [react-native-getting-started](https://facebook.github.io/react-native/docs/getting-started.html#content)
+
  ## Developing
   
  After you have installed all dependencies you can now start developing with:
