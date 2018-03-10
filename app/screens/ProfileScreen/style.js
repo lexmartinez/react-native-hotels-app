@@ -47,7 +47,7 @@ export default StyleSheet.create({
     paddingLeft: 20
   },
   first: {
-    paddingTop:40,
+    paddingTop:30,
     paddingLeft:20
   },
   label: {
