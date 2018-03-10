@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, ScrollView } from 'react-native';
+import CityItem from '../../components/CityItem';
+import {View, ScrollView, StatusBar} from 'react-native';
+import constants from '../../config/constants';
 
 class HomeView extends Component {
   constructor(props) {
@@ -10,35 +12,36 @@ class HomeView extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const { getCities } = this.props;
     getCities();
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
-    if (!nextProps.error && !nextProps.loading) {
+    if (nextProps.completed) {
       this.setState({ cities: nextProps.cities });
     }
   }
 
-  onCityHotels = (city) => {
+  getHotels = (city) => {
+    console.log(city)
     this
       .props
       .navigation
-      .navigate('Detail', { city });
+      .navigate('Hotels', { city });
   };
 
   render() {
-    console.log('statesssss',this.state)
     return (
-      <View>
-            <Text>Test</Text>
+      <View  style={{ backgroundColor: constants.PRIMARY_BG_COLOR}}>
+        <StatusBar barStyle={constants.BAR_STYLE}/>
+        <ScrollView>
             {this.state
               .cities
-              .map((city, index) => (
-                <Text>{{index}}</Text>
+              .map((city) => (
+                <CityItem city={city} key={city._id} event={this.getHotels} />
               ))}
+        </ScrollView>
       </View>
     );
   }

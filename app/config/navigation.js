@@ -4,6 +4,7 @@ import HomeScreen from '../screens/HomeScreen';
 import DetailScreen from '../screens/Detail';
 import HotelsScreen from '../screens/Hotels';
 import HeaderLogo from '../components/HeaderLogo';
+import constants from '../config/constants';
 
 export default StackNavigator(
   {
@@ -22,9 +23,11 @@ export default StackNavigator(
     navigationOptions: {
       headerTitle: <HeaderLogo />,
       headerStyle: {
-        backgroundColor: '#151126',
+        backgroundColor: constants.PRIMARY_BG_COLOR,
+        borderBottomColor: constants.PRIMARY_BG_COLOR,
+        borderBottomWidth: 5
       },
-      headerTintColor: '#fff',
+      headerTintColor: constants.PRIMARY_TEXT_COLOR,
       headerTitleStyle: {
         fontWeight: 'bold',
       }
