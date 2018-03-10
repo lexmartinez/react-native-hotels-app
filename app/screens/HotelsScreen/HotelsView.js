@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CityItem from '../../components/CityItem';
-import {View, ScrollView, StatusBar} from 'react-native';
+import {View, ScrollView, StatusBar, Text} from 'react-native';
 import constants from '../../config/constants';
 
-class HomeView extends Component {
+class HotelsView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cities: [],
+      hotels: [],
     };
   }
 
   componentDidMount() {
-    const { getCities } = this.props;
-    getCities();
+    const { getHotels } = this.props;
+    getHotels(this.props.navigation.state.params.city);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.completed) {
-      this.setState({ cities: nextProps.cities });
+      this.setState({ hotels: nextProps.hotels });
     }
   }
 
-  getHotels = (city) => {
+  getHotel = (hotel) => {
+    console.log(hotel)
     this
       .props
       .navigation
-      .navigate('Hotels', { city });
+      .navigate('Detail', { hotel });
   };
 
   render() {
@@ -35,11 +35,10 @@ class HomeView extends Component {
       <View  style={{ backgroundColor: constants.PRIMARY_BG_COLOR}}>
         <StatusBar barStyle={constants.BAR_STYLE}/>
         <ScrollView>
-            <CityItem city={{}} key={0} event={this.getHotels} />
             {this.state
-              .cities
-              .map((city) => (
-                <CityItem city={city} key={city._id} event={this.getHotels} />
+              .hotels
+              .map((hotel) => (
+                <Text key={hotel._id}>{hotel.name}</Text>
               ))}
         </ScrollView>
       </View>
@@ -47,10 +46,10 @@ class HomeView extends Component {
   }
 }
 
-HomeView.propTypes = {
-  getCities: PropTypes.func.isRequired,
+HotelsView.propTypes = {
+  getHotels: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired,
-  cities: PropTypes.array
+  hotels: PropTypes.array
 };
 
-export default HomeView;
+export default HotelsView;
