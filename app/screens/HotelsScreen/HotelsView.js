@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {View, ScrollView, StatusBar, Text} from 'react-native';
 import constants from '../../config/constants';
+import HotelItem from '../../components/HotelItem';
 
 class HotelsView extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class HotelsView extends Component {
             {this.state
               .hotels
               .map((hotel) => (
-                <Text key={hotel._id}>{hotel.name}</Text>
+                <HotelItem hotel={hotel} key={hotel._id} event={this.getHotel} />
               ))}
         </ScrollView>
       </View>
