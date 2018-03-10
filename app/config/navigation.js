@@ -1,9 +1,7 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import HomeScreen from '../screens/HomeScreen';
-import HotelsScreen from '../screens/HotelsScreen';
-import DetailScreen from '../screens/Detail';
-import HeaderLogo from '../components/HeaderLogo';
+import { HomeScreen, HotelsScreen, DetailScreen, ProfileScreen }  from '../screens';
+import { HeaderLogo } from '../components';
 import constants from '../config/constants';
 
 export default StackNavigator(
@@ -16,6 +14,9 @@ export default StackNavigator(
     },
     Detail: {
       screen: DetailScreen,
+    },
+    Profile: {
+      screen: ProfileScreen,
     },
   },
   {

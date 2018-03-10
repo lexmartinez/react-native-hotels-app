@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {View, ScrollView, StatusBar, Text} from 'react-native';
+import { View, ScrollView, StatusBar } from 'react-native';
 import constants from '../../config/constants';
-import HotelItem from '../../components/HotelItem';
+import { HotelItem, ProfileButton } from '../../components';
 
 class HotelsView extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerRight: (
+        <ProfileButton navigation={navigation}/>
+      ),
+  }};
+
   constructor(props) {
     super(props);
     this.state = {

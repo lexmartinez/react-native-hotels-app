@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+const { width } = Dimensions.get('window');
 
 export default StyleSheet.create({
   container:{
@@ -8,7 +9,7 @@ export default StyleSheet.create({
   listitem:{
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     height: 200,
-    width: 375,
+    width,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -17,14 +18,14 @@ export default StyleSheet.create({
     marginBottom: 8,
     textAlign: 'right',
     color: '#fff',
-    backgroundColor: 'rgba(0, 0, 0, 0)'
+    fontFamily: 'Avenir'
   },
   subtitle:{
     fontSize: 20,
     marginBottom: 4,
     textAlign: 'right',
     color: '#fff',
-    backgroundColor: 'rgba(0, 0, 0, 0)'
+    fontFamily: 'Avenir'
   },
   backgroundImage:{
     justifyContent: 'center',

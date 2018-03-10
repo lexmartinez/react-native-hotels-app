@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CityItem from '../../components/CityItem';
-import {View, ScrollView, StatusBar} from 'react-native';
+import { CityItem, ProfileButton } from '../../components';
+import { View, ScrollView, StatusBar } from 'react-native';
 import constants from '../../config/constants';
 
 class HomeView extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+    headerRight: (
+      <ProfileButton navigation={navigation}/>
+    ),
+  }};
+
   constructor(props) {
     super(props);
     this.state = {
