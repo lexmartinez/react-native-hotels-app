@@ -1,6 +1,6 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import HomeScreen from '../screens/Home';
+import HomeScreen from '../screens/HomeScreen';
 import DetailScreen from '../screens/Detail';
 import HotelsScreen from '../screens/Hotels';
 import HeaderLogo from '../components/HeaderLogo';
