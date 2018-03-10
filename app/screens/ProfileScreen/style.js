@@ -5,7 +5,7 @@ const { width } = Dimensions.get('window');
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: constants.SECONDARY_BG_COLOR,
   },
   backgroundImage: {
     justifyContent: 'center',

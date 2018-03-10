@@ -2,34 +2,34 @@ import * as keys from './keys';
 
 const init = {
   loading: false,
-  hotels: [],
+  hotel: {},
   error: false,
   completed: false
 };
 
 const reducer = (state = init, action) => {
   switch (action.type) {
-    case keys.HOTELS:
+    case keys.HOTEL:
       return {
         ...state,
         loading: true,
         error: false,
-        hotels: [],
+        hotel: {},
         completed: false
       };
-    case keys.HOTELS_OK:
+    case keys.HOTEL_OK:
       return {
         ...state,
         loading: false,
         error: false,
-        hotels: action.payload,
+        hotel: action.payload,
         completed: true
       };
-    case keys.HOTELS_FAIL:
+    case keys.HOTEL_FAIL:
       return {
         ...state,
         loading: false,
-        hotels: [],
+        hotel: {},
         error: true,
         completed: true
       };

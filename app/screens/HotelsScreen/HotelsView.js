@@ -30,12 +30,11 @@ class HotelsView extends Component {
     }
   }
 
-  getHotel = (hotel) => {
-    console.log(hotel)
+  getHotel = (id) => {
     this
       .props
       .navigation
-      .navigate('Detail', { hotel });
+      .navigate('Detail', { id });
   };
 
   render() {
@@ -57,7 +56,7 @@ class HotelsView extends Component {
 HotelsView.propTypes = {
   getHotels: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired,
-  hotels: PropTypes.array
+  hotels: PropTypes.array.isRequired
 };
 
 export default HotelsView;

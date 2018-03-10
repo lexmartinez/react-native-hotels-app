@@ -6,7 +6,7 @@ import constants from '../../config/constants';
 import styles from './style';
 
 const HotelItem = ({ hotel, event }) => (
-  <TouchableHighlight onPress={() => event(hotel.name)}>
+  <TouchableHighlight onPress={() => event(hotel._id)}>
     <View style={styles.container}>
       <ImageBackground source={{uri: hotel.images[Math.floor(Math.random() * hotel.images.length)] || constants.DEFAULT_HOTEL_IMG}} style={styles.backgroundImage}>
         <View style={styles.listitem}>

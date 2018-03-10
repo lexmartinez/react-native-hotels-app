@@ -6,5 +6,11 @@ export default {
     headers: {
       Accept: 'application/json'
     },
+  }),
+  getHotel: (id) => fetch(`${constants.API_URL}/hotels/${id}`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json'
+    },
   })
 }

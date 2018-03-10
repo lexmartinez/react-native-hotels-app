@@ -57,7 +57,7 @@ class HomeView extends Component {
 HomeView.propTypes = {
   getCities: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired,
-  cities: PropTypes.array
+  cities: PropTypes.array.isRequired
 };
 
 export default HomeView;
