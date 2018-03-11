@@ -8,10 +8,10 @@
 
 ```bash
 # clone repo
-$ git clone https://github.com/lexmartinez/rest-hotels-api
+$ git clone https://github.com/lexmartinez/react-native-hotels-app
 
 # change directory to cloned app
-$ cd rest-hotels-api
+$ cd react-native-hotels-app
 
 # install the dependencies with npm
 $ npm install
@@ -42,12 +42,16 @@ $ react-native run-ios
   
  After you have installed all dependencies you can now start developing with:
  
- * `react-native run-ios` or `react-native run-android`
+ * `react-native run-ios`
  
  It will start the desired mobile operating system emulator with the app running, any change made will refresh the app on emulator
 
 ## Preview
 
+| <img src="https://raw.githubusercontent.com/lexmartinez/react-native-hotels-app/master/screenshots/screenshot-1.png" width="400"> | <img src="https://raw.githubusercontent.com/lexmartinez/react-native-hotels-app/master/screenshots/screenshot-2.png" width="400">  |
+| ------------- | ------------- |
+| <img src="https://raw.githubusercontent.com/lexmartinez/react-native-hotels-app/master/screenshots/screenshot-3.png" width="400"> | <img src="https://raw.githubusercontent.com/lexmartinez/react-native-hotels-app/master/screenshots/screenshot-4.png" width="400">  |
+
 ## License
 
-This project is licensed under MIT License - see the [LICENSE.md](https://github.com/lexmartinez/rest-hotels-api/blob/master/LICENSE.md) file for details
+This project is licensed under MIT License - see the [LICENSE.md](https://github.com/lexmartinez/react-native-hotels-app/blob/master/LICENSE.md) file for details
