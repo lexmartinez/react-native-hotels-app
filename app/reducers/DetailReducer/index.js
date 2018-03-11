@@ -2,7 +2,7 @@ import * as keys from './keys';
 
 const init = {
   loading: false,
-  hotel: {},
+  hotel: {amenities:{}},
   error: false,
   completed: false
 };
@@ -14,7 +14,7 @@ const reducer = (state = init, action) => {
         ...state,
         loading: true,
         error: false,
-        hotel: {},
+        hotel: {amenities:{}},
         completed: false
       };
     case keys.HOTEL_OK:
@@ -29,7 +29,7 @@ const reducer = (state = init, action) => {
       return {
         ...state,
         loading: false,
-        hotel: {},
+        hotel: {amenities:{}},
         error: true,
         completed: true
       };

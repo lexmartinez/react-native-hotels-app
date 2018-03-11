@@ -10,6 +10,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.0-alpha.1",
     "react-native": "0.54.0",
+    "react-native-google-static-map": "^0.1.11",
     "react-native-star-rating": "^1.0.9",
     "react-native-vector-icons": "^4.5.0",
     "react-navigation": "^1.5.1",
