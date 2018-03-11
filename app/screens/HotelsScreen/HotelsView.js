@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {View, ScrollView, StatusBar, Dimensions} from 'react-native';
 import constants from '../../config/constants';
-import { HotelItem, NoResults, SearchButton } from '../../components';
+import { HotelItem, NoResults, SearchButton, Loading, Error } from '../../components';
 import SearchBar from 'react-native-searchbar';
 const { width, height } = Dimensions.get('window');
 
@@ -28,8 +28,12 @@ class HotelsView extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.completed) {
-      this.setState({ hotels: nextProps.hotels });
-      this.setState({ allHotels: nextProps.hotels });
+      this.setState({
+        hotels: nextProps.hotels,
+        completed: nextProps.completed,
+        allHotels: nextProps.hotels,
+        error: nextProps.error
+      });
     }
   }
 
@@ -61,15 +65,20 @@ class HotelsView extends Component {
           heightAdjust={-5}
         />
         {
-          (this.state.allHotels && this.state.hotels.length > 0)?
-            <ScrollView>
-              {this.state
-                .hotels
-                .map((hotel) => (
-                  <HotelItem hotel={hotel} key={hotel._id} event={this.getHotel} />
-                ))}
-            </ScrollView>:
-            <NoResults/>
+          (this.state.completed)?
+            (this.state.error?
+              <Error/>:
+              ((this.state.allHotels && this.state.hotels.length > 0)?
+                <ScrollView>
+                  {this.state
+                    .hotels
+                    .map((hotel) => (
+                      <HotelItem hotel={hotel} key={hotel._id} event={this.getHotel} />
+                    ))}
+                </ScrollView>:
+                <NoResults/>))
+            :
+            <Loading/>
         }
       </View>
     );
