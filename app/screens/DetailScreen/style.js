@@ -51,12 +51,12 @@ export default StyleSheet.create({
     alignItems: 'flex-start'
   },
   mapView: {
-    marginTop: 10,
-    marginBottom: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: constants.PRIMARY_BG_COLOR,
-    borderTopWidth: 1,
-    borderTopColor: constants.PRIMARY_BG_COLOR
+    marginTop: 15,
+    marginBottom: 15,
+    shadowOpacity: 0.65,
+    shadowRadius: 5,
+    shadowColor: '#989898',
+    shadowOffset: { height: 0, width: 0 },
   },
   location: {
     marginTop: -15
