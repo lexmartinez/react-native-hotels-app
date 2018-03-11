@@ -52,7 +52,7 @@ $ react-native run-ios
  
  * Open IOS project on `Xcode`, that is located in `${PROJECT_DIR}/ios/otel.xcodeproj`
  * Connect and choose your iPhone device on topbar
- <img src="http://media.idownloadblog.com/wp-content/uploads/2017/06/compile-extra_recipe-select-build-device.png"/>
+    <img src="http://media.idownloadblog.com/wp-content/uploads/2017/06/compile-extra_recipe-select-build-device.png"/>
  * Use the `Play` :arrow_forward: button (few pixels on left) to run the App
 
 > Please keep your Xcode updated in order to avoid any Xcode/Runtime version problem
