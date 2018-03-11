@@ -23,6 +23,7 @@ export default StackNavigator(
     initialRouteName: 'Home',
     navigationOptions: {
       headerTitle: <HeaderLogo />,
+      gesturesEnabled: false,
       headerStyle: {
         backgroundColor: constants.PRIMARY_BG_COLOR,
         borderBottomColor: constants.PRIMARY_BG_COLOR,

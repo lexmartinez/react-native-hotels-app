@@ -2,7 +2,7 @@ import * as keys from './keys';
 
 const init = {
   loading: false,
-  hotel: {amenities:{}},
+  hotel: {amenities:{},images:[]},
   error: false,
   completed: false
 };

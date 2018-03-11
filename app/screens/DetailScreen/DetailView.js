@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import { View, ScrollView, StatusBar, Text, Dimensions, Image } from 'react-native';
 import StarRating from 'react-native-star-rating';
 import constants from '../../config/constants';
-import { ShareButton } from '../../components';
+import { ShareButton, Amenities, Contact } from '../../components';
 import Icon from 'react-native-vector-icons/Feather';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import GoogleStaticMap from 'react-native-google-static-map';
 import Carousel from 'react-native-snap-carousel';
 import styles from './style.js';
@@ -99,68 +98,11 @@ class DetailView extends Component {
           </View>
           <View style={styles.field}>
             <Text style={styles.label}>Amenities</Text>
-            <View style={styles.amenities}>
-              {
-                hotel.amenities.wifi?
-                  <FontAwesome.Button name="wifi" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-                    <Text style={styles.value}>Wi-Fi</Text>
-                  </FontAwesome.Button>:null
-              }
-              {
-                hotel.amenities.pool?
-                  <FontAwesome.Button name="tint" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-                    <Text style={styles.value}>Pool</Text>
-                  </FontAwesome.Button>:null
-              }
-              {
-                hotel.amenities.spa?
-                  <FontAwesome.Button name="bed" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-                    <Text style={styles.value}>Spa</Text>
-                  </FontAwesome.Button>:null
-              }
-              {
-                hotel.amenities.parking?
-                  <FontAwesome.Button name="car" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-                    <Text style={styles.value}>Parking</Text>
-                  </FontAwesome.Button>:null
-              }
-              {
-                hotel.amenities.ac?
-                  <FontAwesome.Button name="snowflake-o" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-                    <Text style={styles.value}>A/C</Text>
-                  </FontAwesome.Button>:null
-              }
-              {
-                hotel.amenities.restaurant?
-                  <FontAwesome.Button name="cutlery" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-                    <Text style={styles.value}>Restaturant</Text>
-                  </FontAwesome.Button>:null
-              }
-              {
-                hotel.amenities.bar?
-                  <FontAwesome.Button name="glass" size={19} backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-                    <Text style={styles.value}>Bar</Text>
-                  </FontAwesome.Button>:null
-              }
-              {
-                hotel.amenities.gym?
-                  <FontAwesome.Button name="trophy" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-                    <Text style={styles.value}>Gym</Text>
-                  </FontAwesome.Button>:null
-              }
-            </View>
+            <Amenities hotel={hotel}/>
           </View>
           <View style={styles.field}>
             <Text style={styles.label}>Contact</Text>
-            <Icon.Button name="globe" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-              <Text style={styles.value}>{hotel.website}</Text>
-            </Icon.Button>
-            <Icon.Button name="mail" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-              <Text style={styles.value}>{hotel.email}</Text>
-            </Icon.Button>
-            <Icon.Button name="phone" backgroundColor="transparent" color={fontColor}  marginTop={marginTop}>
-              <Text style={styles.value}>{hotel.phone}</Text>
-            </Icon.Button>
+            <Contact hotel={hotel}/>
           </View>
           <View style={styles.field}>
             <Text style={styles.label}></Text>
