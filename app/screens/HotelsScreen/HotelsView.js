@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, ScrollView, StatusBar } from 'react-native';
+import {View, ScrollView, StatusBar, Dimensions} from 'react-native';
 import constants from '../../config/constants';
-import { HotelItem, ProfileButton } from '../../components';
+import { HotelItem, NoResults, SearchButton } from '../../components';
+import SearchBar from 'react-native-searchbar';
+const { width, height } = Dimensions.get('window');
 
 class HotelsView extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerRight: (
-        <ProfileButton navigation={navigation}/>
+        <SearchButton navigation={navigation}/>
       ),
   }};
 
@@ -27,6 +29,7 @@ class HotelsView extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.completed) {
       this.setState({ hotels: nextProps.hotels });
+      this.setState({ allHotels: nextProps.hotels });
     }
   }
 
@@ -39,15 +42,35 @@ class HotelsView extends Component {
 
   render() {
     return (
-      <View  style={{ backgroundColor: constants.PRIMARY_BG_COLOR}}>
+      <View  style={{ backgroundColor: constants.PRIMARY_BG_COLOR, width, height }}>
         <StatusBar barStyle={constants.BAR_STYLE}/>
-        <ScrollView>
-            {this.state
-              .hotels
-              .map((hotel) => (
-                <HotelItem hotel={hotel} key={hotel._id} event={this.getHotel} />
-              ))}
-        </ScrollView>
+        <SearchBar
+          ref={(ref) => this.props.navigation.searchBar = ref}
+          data={this.state.allHotels}
+          handleResults={(results)=>{
+            this.setState({ hotels: results });
+          }}
+          textColor={constants.PRIMARY_BG_COLOR}
+          iconColor={constants.PRIMARY_BG_COLOR}
+          iOSPadding={false}
+          fontFamily={'Avenir'}
+          allDataOnEmptySearch={true}
+          fontSize={23}
+          backgroundColor={constants.SECONDARY_BG_COLOR}
+          hideBack={true}
+          heightAdjust={-5}
+        />
+        {
+          (this.state.allHotels && this.state.hotels.length > 0)?
+            <ScrollView>
+              {this.state
+                .hotels
+                .map((hotel) => (
+                  <HotelItem hotel={hotel} key={hotel._id} event={this.getHotel} />
+                ))}
+            </ScrollView>:
+            <NoResults/>
+        }
       </View>
     );
   }
