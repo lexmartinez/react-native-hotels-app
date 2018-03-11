@@ -108,6 +108,12 @@ class DetailView extends Component {
             <Text style={styles.label}></Text>
           </View>
         </ScrollView>
+        <Icon.Button name="shopping-cart" backgroundColor={constants.PRIMARY_BG_COLOR}
+                     color={constants.PRIMARY_TEXT_COLOR} borderRadius={0} justifyContent={'center'}
+                      alignItems={'center'} height={60}
+                     onPress={()=>{alert('Booking function not included on this technical-test')}}>
+          <Text style={styles.bookingButton}>Booking Now</Text>
+        </Icon.Button>
       </View>
     );
   }

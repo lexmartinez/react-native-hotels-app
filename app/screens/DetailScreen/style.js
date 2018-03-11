@@ -64,5 +64,10 @@ export default StyleSheet.create({
   carousel:{
     height: 320,
     width
+  },
+  bookingButton: {
+    fontSize: 23,
+    color: constants.PRIMARY_TEXT_COLOR,
+    fontFamily: 'Avenir'
   }
 });
