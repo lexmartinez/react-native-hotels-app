@@ -14,7 +14,7 @@ const reducer = (state = init, action) => {
         ...state,
         loading: true,
         error: false,
-        hotel: {amenities:{}},
+        hotel: {amenities:{},images:[]},
         completed: false
       };
     case keys.HOTEL_OK:
@@ -29,7 +29,7 @@ const reducer = (state = init, action) => {
       return {
         ...state,
         loading: false,
-        hotel: {amenities:{}},
+        hotel: {amenities:{},images:[]},
         error: true,
         completed: true
       };

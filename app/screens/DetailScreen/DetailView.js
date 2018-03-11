@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, ScrollView, StatusBar, Text, Dimensions } from 'react-native';
+import { View, ScrollView, StatusBar, Text, Dimensions, Image } from 'react-native';
 import StarRating from 'react-native-star-rating';
 import constants from '../../config/constants';
 import { ShareButton } from '../../components';
 import Icon from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import GoogleStaticMap from 'react-native-google-static-map';
+import Carousel from 'react-native-snap-carousel';
 import styles from './style.js';
 const { width } = Dimensions.get('window');
 
@@ -21,7 +22,7 @@ class DetailView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hotel: {amenities:{}},
+      hotel: {amenities:{}, images:[]},
     };
   }
 
@@ -39,15 +40,31 @@ class DetailView extends Component {
     }
   }
 
+  _renderImage ({item}) {
+    return (
+      <Image source={{uri:item}} style={styles.carousel}></Image>
+    );
+  }
+
   render() {
     const fontColor = '#676767';
     const marginTop = -4;
     const hotel = this.state.hotel;
-    console.log(this.state.hotel.latitude,this.state.hotel.longitude )
     return (
       <View  style={styles.container}>
         <StatusBar barStyle={constants.BAR_STYLE}/>
         <ScrollView>
+          <View style={styles.carousel}>
+          <Carousel
+            data={hotel.images}
+            renderItem={this._renderImage}
+            sliderWidth={width}
+            itemWidth={width}
+            itemHeight={320}
+            sliderHeight={320}
+            activeAnimationType={'spring'}
+          />
+          </View>
           <Text style={styles.name}>{hotel.name}</Text>
           <View style={[styles.field, styles.rating]}>
             <StarRating

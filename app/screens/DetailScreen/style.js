@@ -14,7 +14,7 @@ export default StyleSheet.create({
     color: constants.PRIMARY_BG_COLOR,
     fontWeight: '700',
     fontFamily: 'Avenir',
-    paddingTop:30,
+    paddingTop:20,
     paddingLeft:20,
     paddingRight: 20
   },
@@ -60,5 +60,9 @@ export default StyleSheet.create({
   },
   location: {
     marginTop: -15
+  },
+  carousel:{
+    height: 320,
+    width
   }
 });
