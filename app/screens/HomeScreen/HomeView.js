@@ -44,7 +44,7 @@ class HomeView extends Component {
 
   render() {
     return (
-      <View  style={{ backgroundColor: constants.PRIMARY_BG_COLOR, width, height}}>
+      <View  style={{ backgroundColor: constants.PRIMARY_BG_COLOR, width, height:(height-45)}}>
         <StatusBar barStyle={constants.BAR_STYLE}/>
         {
             this.state.completed?

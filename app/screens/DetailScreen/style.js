@@ -14,7 +14,7 @@ export default StyleSheet.create({
     color: constants.PRIMARY_BG_COLOR,
     fontWeight: '700',
     fontFamily: 'Avenir',
-    paddingTop:20,
+    paddingTop:0,
     paddingLeft:20,
     paddingRight: 20
   },
@@ -36,6 +36,11 @@ export default StyleSheet.create({
   },
   value: {
     fontSize: 23,
+    color: '#676767',
+    fontFamily: 'Avenir'
+  },
+  small: {
+    fontSize: 17,
     color: '#676767',
     fontFamily: 'Avenir'
   },

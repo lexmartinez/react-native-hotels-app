@@ -54,12 +54,12 @@ class DetailView extends Component {
     const marginTop = -4;
     const hotel = this.state.hotel;
     return (
-      <View  style={styles.container}>
+      <View style={styles.container}>
         <StatusBar barStyle={constants.BAR_STYLE}/>
         {
           this.state.completed?
             (this.state.error?<ErrorDetail/>:
-              <View>
+              <View style={styles.container}>
               <ScrollView>
                 <View style={styles.carousel}>
                   <Carousel
@@ -72,6 +72,10 @@ class DetailView extends Component {
                     activeAnimationType={'spring'}
                   />
                 </View>
+                <Icon.Button name="image" backgroundColor="transparent" color={fontColor} size={15}
+                             justifyContent={'flex-end'} alignItems={'center'}>
+                  <Text style={styles.small}>{hotel.images.length} photos</Text>
+                </Icon.Button>
                 <Text style={styles.name}>{hotel.name}</Text>
                 <View style={[styles.field, styles.rating]}>
                   <StarRating
@@ -119,7 +123,7 @@ class DetailView extends Component {
               <Icon.Button name="shopping-cart" backgroundColor={constants.PRIMARY_BG_COLOR}
                            color={constants.PRIMARY_TEXT_COLOR} borderRadius={0} justifyContent={'center'}
                            alignItems={'center'} height={60}
-                           onPress={()=>{alert('Booking function not included on this technical-test')}}>
+                           onPress={()=>{alert('Booking feature not included on this technical-test')}}>
                 <Text style={styles.bookingButton}>Booking Now</Text>
               </Icon.Button>
             </View>):

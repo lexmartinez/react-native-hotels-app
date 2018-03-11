@@ -46,7 +46,7 @@ class HotelsView extends Component {
 
   render() {
     return (
-      <View  style={{ backgroundColor: constants.PRIMARY_BG_COLOR, width, height }}>
+      <View  style={{ backgroundColor: constants.PRIMARY_BG_COLOR, width, height:(height-45) }}>
         <StatusBar barStyle={constants.BAR_STYLE}/>
         <SearchBar
           ref={(ref) => this.props.navigation.searchBar = ref}
